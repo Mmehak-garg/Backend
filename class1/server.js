@@ -25,3 +25,24 @@ app.post('/api/cars',(req,res)=>{
     console.log(brand);
     res.send("Car Submitted Successfully.");
 })
+
+// server and db connection
+
+// const mongoose = require('mongoose');
+
+// promise
+const mongoose = require("mongoose");
+mongoose
+  .connect("mongodb://127.0.0.1:27017/mydatabase", {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+  })
+  .then(() => {
+    console.log("Connection established");
+  })
+  .catch((error) => console.log(error));
+// const mongoose = require('mongoose');
+
+// mongoose.connect('mongodb://127.0.0.1:27017/mydatabase')
+//   .then(() => console.log('Database connected!'))
+//   .catch((err) => console.error('Database connection error:', err));
