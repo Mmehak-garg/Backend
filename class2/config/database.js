@@ -5,8 +5,8 @@ require("dotenv").config(); // any thing define in env will load into process ob
 
 const dbConnect = () =>{
     mongoose.connect(process.env.DATABASE_URL,{
-        useNewUrlParser:true,
-        useUnifiedTopology:true,
+        // useNewUrlParser:true,
+        // useUnifiedTopology:true,
     })
     .then(()=>{console.log("db connect sucessfully")})
     .catch((err)=>{

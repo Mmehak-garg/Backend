@@ -14,12 +14,12 @@ const todoSchema = new mongoose.Schema(
         createdAt:{
             type:Date,
             required:true,
-            default:DataTransfer.now(),
+            default:Date.now(),
         },
         updatedAt:{
             type:Date,
             required:true,
-            default:DataTransfer.now(),
+            default:Date.now(),
         }
     }
 );
