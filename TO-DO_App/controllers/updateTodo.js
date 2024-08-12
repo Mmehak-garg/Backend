@@ -8,15 +8,15 @@ exports.updateTodo = async(req,res) =>{
     try{
         //extract title and description from request body
         // destructuring 
-        const {id} = req.params;
+        const {id} = req.params; 
         const {title,description}= req.body;
         const todo = await Todo.findByIdAndUpdate(
-            {_id: id},
-        {title,description,updatedAt:Date.now()}
+            {_id: id},//for which id
+        {title,description,updatedAt:Date.now()} // what to update 
     );
         // data from given id not found
 
-        if(!404){
+        if(!todo){
             return res.status(404).json({
                 success:false,
                 message:"no data with this id",
